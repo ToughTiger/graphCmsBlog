@@ -62,7 +62,7 @@ const CommentsForm = ({ slug }) => {
     }
 
     submitComment(commentObj).then((res) => {
-      console.log(res);
+     
       if (res.createComment) {
         if (!storeData) {
           formData.name = "";

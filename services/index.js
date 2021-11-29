@@ -227,15 +227,14 @@ export const getFeaturedPosts = async () => {
 };
 
 export const submitComment = async (obj) => {
-  const result = await fetch(`${graphqlAPI} +/api/comments`, {
+  const result = await fetch(graphqlAPI + "/comments", {
     method: "POST",
     headers: {
-      "Access-Control-Allow-Origin": "*",
       "Content-Type": "application/json",
     },
     body: JSON.stringify(obj),
   });
-
+  console.log(result.json());
   return result.json();
 };
 
