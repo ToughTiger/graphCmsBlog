@@ -6,6 +6,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "axios": "^0.24.0",
     "cors": "^2.8.5",
     "graphql": "^16.0.1",
     "graphql-request": "^3.6.1",

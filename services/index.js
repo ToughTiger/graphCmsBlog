@@ -1,5 +1,5 @@
 import { request, gql } from "graphql-request";
-
+import axios from "axios";
 const graphqlAPI = process.env.NEXT_PUBLIC_NORTHMIRROR_ENDPOINT;
 
 export const getPosts = async () => {
@@ -227,16 +227,17 @@ export const getFeaturedPosts = async () => {
 };
 
 export const submitComment = async (obj) => {
-  const result = await fetch(graphqlAPI + "/comments", {
+  const result = await fetch('/api/comments', {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
     body: JSON.stringify(obj),
   });
-  console.log(result.json());
+  console.log(result);
   return result.json();
 };
+
 
 export const getComments = async (slug) => {
   const query = gql`
